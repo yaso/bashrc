@@ -1,6 +1,5 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+# yasodara.cordova@gmail.com
 
 # see also the "/etc/issue" and "/etc/motd" files
 #     http://www.linuxquestions.org/questions/linux-newbie-8/how-to-setup-system-login-banner-and-login-message-298266/
@@ -18,6 +17,10 @@ function ps_exit() {
     exit $a;
 }
 PS_EXIT="\$(ps_exit)"
+
+#######################################
+# history
+#######################################
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -76,42 +79,22 @@ RED='\e[0;31m'
 
 echo
 
-# http://www.garron.me/en/go2linux/what-is-my-public-ip-command-line.html
-GetMyIP() {
-    curl -s checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//';
-}
-# Get quote-of-the-day from Wikiquote:
-# QuoteOfTheDay() {
-#    if [ -z "$1" ]
-#    then
-#        curl -s https://en.wikiquote.org/wiki/Template:QoD | grep -A 6 \<td\> | sed 's/<[^>]\+>//g' | cowsay -f kilroy
-#    else
-#        curl -s https://en.wikiquote.org/wiki/Template:QoD | grep -A "$1" \<td\> | sed 's/<[^>]\+>//g' | cowsay -f kilroy
-#    fi
-#}
-
-# taken from http://www.pixelbeat.org/settings/.bashrc
-ord() { printf "0x%x\n" "'$1"; }
-chr() { printf $(printf '\\%03o\\n' "$1"); }
-
 # Change bash prompt:
 #    things you can do: http://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html
-#    colors: http://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/
-# was >> (like MATLAB) until I changed PuTTY's settings to be able to use λ
-# other characters: →
+# the original had a <3, but I updated to the λ and it is classy that way 
 PS1="${GRAY}\T ${GREEN}\u ${RED}\W ${PURPLE}λ ${GRAY} "
 
 #######################################
-# git alias
+# git alias goes here
 #######################################
-alias gitadd='git add'
-alias gbranch='git br' 
+alias gadd='git add'
+alias gbr='git br' 
 alias gdiff='git diff' 
 alias gdc='git diff --cached' 
 alias glog='git log'
 alias gpull='git pull' 
 alias gstatus='git status' 
 alias gstash='git stash' 
-alias gplo='git pull origin master'
-alias gbv='git branch -vv' 
+alias gpomaster='git pull origin master'
+alias gbranchv='git branch -vv' 
 
