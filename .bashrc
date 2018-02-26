@@ -104,14 +104,14 @@ PS1="${GRAY}\T ${GREEN}\u ${RED}\W ${PURPLE}λ ${GRAY} "
 #######################################
 # git alias
 #######################################
-alias ga='git add'
-alias gb='git br' 
-alias gd='git diff' 
+alias gitadd='git add'
+alias gbranch='git br' 
+alias gdiff='git diff' 
 alias gdc='git diff --cached' 
-alias gl='git log'
-alias gp='git pull' 
-alias gs='git status' 
-alias gst='git stash' 
+alias glog='git log'
+alias gpull='git pull' 
+alias gstatus='git status' 
+alias gstash='git stash' 
 alias gplo='git pull origin master'
 alias gbv='git branch -vv' 
 
